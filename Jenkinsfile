@@ -42,8 +42,8 @@ pipeline {
     stage('Deploy') {
       steps {
           echo "Running deployment script...."
-          sh 'chmod 777 ${WORKSPACE}/BouwDataWebApp/scripts/deployment.sh'
-          sh '${WORKSPACE}/BouwDataWebApp/scripts/deployment.sh'
+          sh 'chmod 777 ${WORKSPACE}/scripts/deployment.sh'
+          sh '${WORKSPACE}/scripts/deployment.sh'
           cleanWs()
       }
     }
