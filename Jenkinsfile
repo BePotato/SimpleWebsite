@@ -10,9 +10,7 @@ pipeline {
     stage('Install') {
 	    steps {
  	      echo "Installing NPM"
-        dir("BouwDataWebApp"){
-          sh 'npm install'
-        }
+        sh 'npm install'
 	    }
     }
 
