@@ -18,21 +18,21 @@ pipeline {
       }
     }
 
-    //stage('Test') {
-    //  parallel {
-    //    stage('unit test (ng test)') {
-    //        steps {
-    //          echo "Running ng test"
-    //          //sh 'npm run-script lint'
-    //        }
-    //    }
-    //      stage ('Static Analysis') {
-    //        steps {
-    //          echo "Running static code test"
-    //      }
-    //    }
-    //  }
-    //}
+    stage('Test') {
+      parallel {
+        stage('unit test (ng test)') {
+            steps {
+              echo "Running ng test"
+              sh 'npm run-script lint'
+            }
+        }
+          stage ('Static Analysis') {
+            steps {
+              echo "Running static code test"
+          }
+        }
+      }
+    }
 
     stage('Deploy') {
       steps {
