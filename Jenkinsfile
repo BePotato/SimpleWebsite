@@ -1,20 +1,19 @@
 pipeline {
   agent {
         docker { label 'nodejs8' }
-  stages{
-    stage ('checkout'){
-      steps{
-        checkout scm
-      }
-    }
-    }// {
+
+    // {
         //docker {
             //image 'node:lts-buster-slim' 
             //args '-p 3000:3000' 
         //}
     //}
-
   stages {
+    stage ('checkout'){
+      steps{
+        checkout scm
+      }
+    }
     stage('Install') {
 	    steps {
  	      echo "Installing NPM"
