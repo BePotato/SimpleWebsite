@@ -7,12 +7,13 @@ pipeline {
             //args '-p 3000:3000' 
         //}
     //}
- stage ('checkout'){
+  stages {
+     stage ('checkout'){
       steps{
         checkout scm
       }
     }
-  stages {
+    
     stage('Install') {
 	    steps {
  	      echo "Installing NPM"
