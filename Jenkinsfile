@@ -1,13 +1,17 @@
 pipeline {
   agent {
-        docker any
+         label 'nodejs8'
     }// {
         //docker {
             //image 'node:lts-buster-slim' 
             //args '-p 3000:3000' 
         //}
     //}
-
+ stage ('checkout'){
+      steps{
+        checkout scm
+      }
+    }
   stages {
     stage('Install') {
 	    steps {
