@@ -1,6 +1,12 @@
 pipeline {
   agent {
-        docker { image 'node:10-alpine' }
+        docker { label 'nodejs8' }
+  stages{
+    stage ('checkout'){
+      steps{
+        checkout scm
+      }
+    }
     }// {
         //docker {
             //image 'node:lts-buster-slim' 
