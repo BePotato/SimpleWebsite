@@ -19,19 +19,24 @@ pipeline {
     }
 
     stage('Test') {
-      parallel {
-        stage('unit test (ng test)') {
-            steps {
-              echo "Running ng test"
-              sh 'npm run-script lint'
-            }
-        }
-          stage ('Static Analysis') {
-            steps {
-              echo "Running static code test"
-          }
-        }
+      steps {
+        echo "running test script"
+         sh 'chmod 777 ${WORKSPACE}/BouwDataWebApp/scripts/test.sh'
+         sh '${WORKSPACE}/BouwDataWebApp/scripts/test.sh'
       }
+      //parallel {
+        //stage('unit test (ng test)') {
+            //steps {
+              //echo "Running ng test"
+              //sh 'npm run-script lint'
+            //}
+        //}
+          //stage ('Static Analysis') {
+            //steps {
+              //echo "Running static code test"
+          //}
+        //}
+      //}
     }
 
     stage('Deploy') {
