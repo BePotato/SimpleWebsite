@@ -1,5 +1,7 @@
 pipeline {
-  agent any// {
+  agent {
+        docker { image 'node:10-alpine' }
+    }// {
         //docker {
             //image 'node:lts-buster-slim' 
             //args '-p 3000:3000' 
