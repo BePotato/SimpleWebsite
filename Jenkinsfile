@@ -1,17 +1,13 @@
 pipeline {
-  agent any // {
+  agent any
+  tools {nodejs "NodeJSinstaller"}
+   // {
         //docker {
             //image 'node:lts-buster-slim' 
             //args '-p 3000:3000' 
         //}
     //}
   stages {
-     stage ('checkout'){
-      steps{
-        checkout scm
-      }
-    }
-
     stage('Install') {
 	    steps {
  	      echo "Installing NPM"
