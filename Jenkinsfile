@@ -6,7 +6,7 @@ pipeline {
 	    steps {
  	      echo "Installing NPM"
         dir("BouwDataWebApp"){
-          sh 'npm install'
+          sh 'ng serve'
         }
 	    }
     }
