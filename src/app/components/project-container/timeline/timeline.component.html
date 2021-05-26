@@ -1,0 +1,48 @@
+<div class="timeline">
+    <meter max=1.0 min =0.0 value="{{StageInt}}"></meter>
+    <div style="display: flex; justify-content: space-around;">
+      <ng-template #PrepBriefContent>
+        <p class="toolTipTekstColor"><b>Stage 1</b> is about developing the detail of the brief and making sure that everything needed for the design process is in place before Stage 2.</p>
+      </ng-template>
+      <button placement="bottom"  [openDelay]="1500" [closeDelay]="1000" [ngbTooltip]="PrepBriefContent"
+        class="m-2" [routerLink]="['/Project/Preparation&Brief']" (click)="timelineClick(0)" mat-raised-button [ngClass]="timeLineLocation == 0 ? 'bold' : ''" >Stage 1: Preparation & Brief</button>
+
+      <ng-template #ConceptDesignContent>
+        <p class="toolTipTekstColor"><b>Stage 2</b> is about getting the design concept right and making sure that the look and feel of the building is proceeding in line with the client's vision, brief and budget.</p>
+      </ng-template>
+      <button placement="bottom"  [openDelay]="1500" [closeDelay]="1000" [ngbTooltip]="ConceptDesignContent"
+        class="m-2" [routerLink]="['/Project/ConceptDesign']" (click)="timelineClick(1)" mat-raised-button [ngClass]="timeLineLocation == 1 ? 'bold' : ''">Stage 2: Concept Design</button>
+
+      <ng-template #SpatialContent>
+        <p class="toolTipTekstColor">The purpose of <b>Stage 3</b> is to spatially coordinate the design before the focus turns to preparing the detailed information required for manufactoring and constructing the building.</p>
+      </ng-template>
+      <button placement="bottom"  [openDelay]="1500" [closeDelay]="1000" [ngbTooltip]="SpatialContent"
+        class="m-2" [routerLink]="['/Project/SpatialCoordination']" (click)="timelineClick(2)" mat-raised-button [ngClass]="timeLineLocation == 2 ? 'bold' : ''">Stage 3: Spatial Coordination</button>
+
+      <ng-template #TechnicalContent>
+        <p class="toolTipTekstColor"><b>Stage 4</b> is about developing the information required to manufacture and construct the building. this requires information from the design team and the specialist subcontractors employed by the contractor.</p>
+      </ng-template>
+      <button placement="bottom"  [openDelay]="1500" [closeDelay]="1000" [ngbTooltip]="TechnicalContent"
+        class="m-2" [routerLink]="['/Project/TechnicalDesign']" (click)="timelineClick(3)" mat-raised-button [ngClass]="timeLineLocation == 3 ? 'bold' : ''">Stage 4: Technical Design</button>
+
+      <ng-template #ManConstrContent>
+        <p class="toolTipTekstColor"><b>Stage 5</b> is when the building is manufactured and constructed.</p>
+      </ng-template>
+      <button placement="bottom"  [openDelay]="1500" [closeDelay]="1000" [ngbTooltip]="ManConstrContent"
+        class="m-2" [routerLink]="['/Project/Manufacturing&Construction']" (click)="timelineClick(4)" mat-raised-button [ngClass]="timeLineLocation == 4 ? 'bold' : ''">Stage 5: Manufacturing & Construction </button>
+
+      <ng-template #HandvrContent>
+        <p class="toolTipTekstColor">By <b>Stage 6</b> the building will be in use and the emphasis of the project team will have switched to closing out any defects and completing the tasks required to conclude the Building Contract.</p>
+      </ng-template>
+      <button placement="bottom"  [openDelay]="1500" [closeDelay]="1000" [ngbTooltip]="HandvrContent"
+        class="m-2" [routerLink]="['/Project/Handover']" (click)="timelineClick(5)" mat-raised-button [ngClass]="timeLineLocation == 5 ? 'bold' : ''">Stage 6: Handover</button>
+
+      <ng-template #InUseContent>
+        <p class="toolTipTekstColor">This is the period when the building is in use, lasting until the building reaches the end of its life.</p>
+      </ng-template>
+      <button placement="left"  [openDelay]="1500" [closeDelay]="1000" [ngbTooltip]="InUseContent"
+        class="m-2" [routerLink]="['/Project/InUse']" (click)="timelineClick(6)" mat-raised-button [ngClass]="timeLineLocation == 6 ? 'bold' : ''">Stage 7: In Use</button>
+    </div>
+  </div>
+  <hr>
+

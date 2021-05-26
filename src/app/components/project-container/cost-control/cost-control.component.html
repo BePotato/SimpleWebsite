@@ -1,0 +1,29 @@
+<h2 class="m-2">{{'cost_control_comp.title' | translate}}</h2>
+<!-----<h3 class="m-2">{{'cost_control_comp.project_uitleg' | translate}}</h3> ------>
+<div class="flex-container">
+<div>
+    <h5>{{'cost_control_comp.tot_investKost' | translate}}</h5>
+    <p>{{TotalBudget | currency: 'EUR'}}</p>
+
+    <h5>{{'cost_control_comp.tot_raming' | translate}}</h5>
+    <p>{{TotalRaming | currency: 'EUR'}}</p>
+  
+  <p *ngIf="TotalBudget > TotalRaming">{{ 'overview_comp.warn_info' | translate }}</p>
+        <p class="Warning" *ngIf="TotalBudget < TotalRaming">
+          <b>{{ 'overview_comp.warn_budget' | translate }} </b><br>
+          <a [routerLink]="['../Investeringskost']">Kijk de investeringskosten na</a> <br>
+          <a [routerLink]="['../Raming']">Kijk de ramingen na</a> <br>
+          Entiteit met hoogste raming: {{ getMaxRamingOfEntities() }}
+        </p>
+</div>
+<div>Raming per entiteit: 
+    <p *ngIf="CheckAllDataReceived()"> 
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [labels]="chartOptions.labels"
+          [responsive]="chartOptions.responsive"
+        ></apx-chart>
+      </p>
+</div>
+  </div>

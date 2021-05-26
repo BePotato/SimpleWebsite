@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-deletion-title">Confirm Deletion</h4>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>{{ 'confirmDelete_comp.question' | translate}}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-info" (click)="decline()">{{ 'confirmDelete_comp.cancel' | translate}}</button>
+  <button type="button" class="btn btn-primary" (click)="accept()">{{ 'confirmDelete_comp.confirm' | translate}}</button>
+</div>

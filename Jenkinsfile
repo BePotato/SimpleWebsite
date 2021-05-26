@@ -1,18 +1,47 @@
 pipeline {
-    agent any 
+  agent any
 
-    stages {
-        stage('Build Assets') {
-            agent any 
-            steps {
-                echo 'Building Assets...'
-            }
+  stages {
+    stage('Install') {
+	    steps {
+ 	      echo "Installing NPM"
+        dir("BouwDataWebApp"){
+          sh 'npm install'
         }
-        stage('Test') {
-            agent any
-            steps {
-                echo 'Testing stuff...'
-            }
-        }
+	    }
     }
+
+    stage('Build') {
+      steps {
+          echo "Running build script...."
+          //sh 'chmod 777 ${WORKSPACE}/BouwDataWebApp/scripts/build.sh'
+          //sh '${WORKSPACE}/BouwDataWebApp/scripts/build.sh'
+      }
+    }
+
+    //stage('Test') {
+    //  parallel {
+    //    stage('unit test (ng test)') {
+    //        steps {
+    //          echo "Running ng test"
+    //          //sh 'npm run-script lint'
+    //        }
+    //    }
+    //      stage ('Static Analysis') {
+    //        steps {
+    //          echo "Running static code test"
+    //      }
+    //    }
+    //  }
+    //}
+
+    stage('Deploy') {
+      steps {
+          echo "Running deployment script...."
+          sh 'chmod 777 ${WORKSPACE}/BouwDataWebApp/scripts/deployment.sh'
+          sh '${WORKSPACE}/BouwDataWebApp/scripts/deployment.sh'
+          cleanWs()
+      }
+    }
+  }
 }

@@ -1,0 +1,73 @@
+.gridcontainer{
+  display: grid;
+  grid-template-columns: 10% 20% 20% 20% 20% 10%;
+  grid-template-rows: 500px 35% 25%;
+}
+.item-background{
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  margin: 0;
+  background-image: url("img\AZSintMaarten.png");
+  background-size: cover;
+  position: relative;
+}
+.item-start-project{
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  width: 400px;
+  height: 220px;
+
+  background-color:#2b2c7e;
+  font-size: x-large;
+  color: white;
+}
+.item-one{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #60A3D9;
+}
+.item-two{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  background-color: #60A3D9;
+  border-radius: 5px;
+  margin: 5px;
+}
+.item-three{
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  background-color: #60A3D9;
+  border-radius: 5px;
+  margin: 5px;
+}
+.item-four{
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  background-color: #60A3D9;
+  border-radius: 5px;
+  margin: 5px;
+}
+.item-textbox{
+  padding:5px;
+  text-align: center;
+  color: white;
+}

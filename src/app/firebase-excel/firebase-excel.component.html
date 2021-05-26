@@ -1,0 +1,43 @@
+  <!-- Page content -->
+<div class="container">
+    <div class="row it">
+    <div class="col-sm-offset-1 col-sm-10" id="one">
+    <p>
+    {{ 'firebase_excel_comp.title' | translate }}
+    </p><br>
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-4 form-group">
+        <h2 class="text-center">{{ 'firebase_excel_comp.my_docs' | translate }}</h2>
+      </div>
+    </div>
+    <div id="uploader">
+    <div class="row uploadDoc">
+      <div class="col-sm-3">
+        <div class="fileUpload btn btn-orange">
+          <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
+          <input class="upload up" type="text" placeholder="Save with Key" name="id" [(ngModel)]="id">
+          <input type="file" (change)="showPreview($event)">
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" name="id" [(ngModel)]="id" placeholder="{{ 'firebase_excel_comp.submit_key' | translate }}">
+      </div>
+    </div>
+    </div>
+    <div class="text-center">
+    <button class="btn btn-next" (click)="save()"><i class="fa fa-paper-plane"></i>{{ 'firebase_excel_comp.search_key' | translate }}</button>
+    <h2>{{ 'firebase_excel_comp.file_view' | translate }}</h2>
+    <input type="text" name="file" class="form-control" [(ngModel)]="file" placeholder="{{ 'global_params.submit' | translate }}">
+    <button (click)="view()">{{ 'firebase_excel_comp.show_file' | translate }}</button>
+    <br><br>
+    <button class="btn btn-next" (click)="showall()"><i class="fa fa-paper-plane"></i>{{ 'firebase_excel_comp.show_all_files' | translate }}</button>
+    <br>
+    <ul>
+        <li *ngFor="let data of AllData" >
+            <a href="{{data.url}}">{{data.id}}</a>
+        </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>

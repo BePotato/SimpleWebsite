@@ -1,0 +1,22 @@
+p {
+    color: black;
+  }
+  table {
+    width: 100%;
+  }
+  table button {
+    border: 0;
+    background: inherit;
+  }
+  table p {
+    margin: 0;
+  }
+
+  table .mat-form-field-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+  table div {
+      margin: 0;
+      padding: 0;
+  }

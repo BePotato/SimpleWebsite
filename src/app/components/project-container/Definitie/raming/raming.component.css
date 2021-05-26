@@ -1,0 +1,24 @@
+p {
+    color: black;
+  }
+  h3{
+    color: black;
+    font: bold;
+  }
+  table button {
+    border: 0;
+    background: inherit;
+  }
+  table {
+    width: 100%;
+  }
+  .example-form-field {
+    width: 200px;
+  }
+
+  table p {
+    margin: 0;
+  }
+  hr{
+     color: black;
+  }

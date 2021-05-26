@@ -1,0 +1,74 @@
+p {
+    color: black;
+  }
+
+.table {
+  width: 100%;
+}
+
+.entiteitenpage {
+  color: black;
+}
+
+input[type=text] {
+  border: 2px solid grey;
+  border-radius: 3px;
+  height: 34px;
+}
+input[type=text]:focus {
+  background-color: #ADE8F4;
+  border: 2px solid red;
+  border-radius: 3px;
+}
+table button {
+  border: 0;
+  background: inherit;
+}
+textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.textAreas {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nameBlock {
+  width: 200px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameBox {
+  width: 20%
+}
+.codeBox {
+  width: 10%
+}
+.descBox {
+  width: 40%
+}
+
+table {
+  width: 100%;
+}
+.smallInfo {
+  font-size: 0.6em;
+}
+.my-custom-tooltip .tooltip-inner {
+  width: auto;
+  font-size: 125%;
+}
+.toolTipTekstColor{
+  color: white;
+}
+table p {
+  margin: 0;
+}
+

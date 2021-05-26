@@ -1,0 +1,245 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-deletion-title">Confirm Deletion</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</ng-template>
+
+<div class="example-container m-2">
+    <h3>{{ 'raming_comp.title' | translate }}</h3>
+    <div>
+    <mat-form-field hintLabel="" appearance="fill">
+      <mat-label>{{ 'global_params.entity' | translate }}</mat-label>
+      <mat-select [(ngModel)]="selectedEntity" (ngModelChange)="SelectEntity()">
+        <mat-option *ngFor="let element of entities" [value]="element">
+          {{element.code}} {{element.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field hintLabel="" appearance="fill">
+      <mat-label>{{ 'global_params.phase' | translate }}</mat-label>
+      <mat-select [(ngModel)]="selectedPhase">
+        <mat-option *ngFor="let element of phases" [value]="element">
+          {{element.code}} {{element.phaseName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field hintLabel="" appearance="fill">
+      <mat-label>{{ 'global_params.storey' | translate }}</mat-label>
+      <mat-select [(ngModel)]="selectedStorey">
+        <mat-option *ngFor="let element of storeys" [value]="element">
+          {{element.code}} {{element.verdieping}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field hintLabel="" appearance="fill">
+      <mat-label>{{ 'global_params.zone' | translate }}</mat-label>
+      <mat-select [(ngModel)]="selectedZone">
+        <mat-option *ngFor="let element of zones" [value]="element">
+          {{element.code}} {{element.gebruiksfunctie}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!---------------- Niveau keuze  ---------------->
+  <div>
+    <mat-form-field hintLabel="" appearance="fill">
+      <mat-label>{{ 'raming_comp.level1' | translate }}</mat-label>
+      <mat-select [(ngModel)]="selectedNiv1" (ngModelChange)="SelectNiveau1()">
+        <mat-option *ngFor="let element of Niveau1List" [value]="element">
+          {{element.code}} {{element.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field hintLabel="" appearance="fill">
+      <mat-label>{{ 'raming_comp.level2' | translate }}</mat-label>
+      <mat-select [(ngModel)]="selectedNiv2" (ngModelChange)="SelectNiveau2()">
+        <mat-option *ngFor="let element of Niveau2List" [value]="element">
+          {{element.code}} {{element.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field hintLabel="" appearance="fill">
+      <mat-label>{{ 'raming_comp.level3' | translate }}</mat-label>
+      <mat-select [(ngModel)]="selectedNiv3">
+        <mat-option *ngFor="let element of Niveau3List" [value]="element">
+          {{element.code}} {{element.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+<!---------------- Hoeveelheid ---------------->
+<div>
+  <mat-form-field hintLabel="{{ 'raming_comp.small_text' | translate }}" appearance="fill" class="toelichting">
+    <mat-label>{{ 'global_params.amount' | translate }}</mat-label>
+    <input [(ngModel)]="newHoeveelheid" matInput placeholder="Ex. 400">                           <!--Verwijderd: [(ngModel)]="newZoneDescription"-->
+  </mat-form-field>
+  <button (click)="SaveRaming()" mat-raised-button>{{ 'global_params.save' | translate }}</button>                          <!--Verwijderd: (click)="SaveRaming()"-->
+</div>
+
+<hr>
+<!---------------- Filter ----------------->
+<h3>{{ 'raming_comp.filter_on' | translate }}</h3>
+<br>
+<mat-form-field class="example-form-field" appearance="fill">
+  <mat-label>{{ 'raming_comp.letters_word' | translate }}</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input [(ngModel)]="FilterValue">
+  <button mat-button *ngIf="FilterValue" matSuffix mat-icon-button (click)="ClearFilterValue()">
+    <mat-icon>close</mat-icon></button>
+</mat-form-field>
+
+<mat-form-field hintLabel="" appearance="fill">
+  <mat-label>{{ 'global_params.entity' | translate }}</mat-label>
+  <mat-select [(ngModel)]="FilteredEntity" (ngModelChange)="FilterEntity()">
+    <mat-option *ngFor="let element of entities" [value]="element">
+      {{element.code}} {{element.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field hintLabel="" appearance="fill">
+  <mat-label>{{ 'global_params.phase' | translate }}</mat-label>
+  <mat-select [(ngModel)]="FilteredPhase" (ngModelChange)="FilterPhase()">
+    <mat-option *ngFor="let element of filterPhases" [value]="element">
+      {{element.code}} {{element.phaseName}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field hintLabel="" appearance="fill">
+  <mat-label>{{ 'global_params.zone' | translate }}</mat-label>
+  <mat-select [(ngModel)]="FilteredZone" (ngModelChange)="FilterZone()">
+    <mat-option *ngFor="let element of zones" [value]="element">
+      {{element.code}} {{element.gebruiksfunctie}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field hintLabel="" appearance="fill">
+  <mat-label>{{ 'global_params.storey' | translate }}</mat-label>
+  <mat-select [(ngModel)]="FilteredStorey" (ngModelChange)="FilterStorey()">
+    <mat-option *ngFor="let element of storeys" [value]="element">
+      {{element.code}} {{element.verdieping}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field hintLabel="" appearance="fill">
+  <mat-label>{{ 'raming_comp.level1' | translate }}</mat-label>
+  <mat-select [(ngModel)]="FilteredNiveau1" (ngModelChange)="FilterNiveau1()">
+    <mat-option *ngFor="let element of Niveau1List" [value]="element">
+      {{element.code}} {{element.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field hintLabel="" appearance="fill">
+  <mat-label>{{ 'raming_comp.level2' | translate }}</mat-label>
+  <mat-select [(ngModel)]="FilteredNiveau2" (ngModelChange)="FilterNiveau2()">
+    <mat-option *ngFor="let element of FilteredNiveau2List" [value]="element">
+      {{element.code}} {{element.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field hintLabel="" appearance="fill">
+  <mat-label>{{ 'raming_comp.level3' | translate }}</mat-label>
+  <mat-select [(ngModel)]="FilteredNiveau3" (ngModelChange)="FilterNiveau3()">
+    <mat-option *ngFor="let element of FilteredNiveau3List" [value]="element">
+      {{element.code}} {{element.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!---------Tabel--------->
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+
+  <ng-container matColumnDef="entiteit" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'global_params.entity' | translate }} </th>
+    <td mat-cell *matCellDef="let element">{{element.entities.name}} </td>
+    <td mat-footer-cell *matFooterCellDef> Total </td>
+  </ng-container>
+
+  <ng-container matColumnDef="phase" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'global_params.phase' | translate }} </th>
+    <td mat-cell *matCellDef="let element"> {{element.phases.phaseName}} </td>
+    <td mat-footer-cell *matFooterCellDef> {{getTotalSum() | currency}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="storey" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'global_params.storey' | translate }} </th>
+    <td mat-cell *matCellDef="let element"> {{element.storeys.verdieping}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="zone" >
+     <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'global_params.zone' | translate }} </th>
+     <td mat-cell *matCellDef="let element">{{element.zones.gebruiksfunctie}}</td>
+   </ng-container>
+
+   <ng-container matColumnDef="name" >
+     <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'global_params.name' | translate }} </th>
+     <td mat-cell *matCellDef="let element">{{element.niveau3s.code}} {{element.niveau3s.name}}</td>
+   </ng-container>
+
+   <ng-container matColumnDef="aantal" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'global_params.amount' | translate }} </th>
+
+    <td mat-cell *matCellDef="let element">
+      <p *ngIf="!element.edit">{{element.hoeveelheid}} </p>
+      <p *ngIf="element.edit"> 
+        <mat-form-field hintLabel="" appearance="fill" class="toelichting">
+          <mat-label>{{element.hoeveelheid}}</mat-label>
+          <input [(ngModel)]="PUTAmount" matInput>
+      </mat-form-field>
+      </p> 
+
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="kkg" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> KKG </th>
+    <td mat-cell *matCellDef="let element">{{element.niveau3s.kkg}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="raming" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'raming_comp.raming' | translate }} </th>
+
+    <td mat-cell *matCellDef="let element">{{element.niveau3s.kkg*element.hoeveelheid}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> {{ 'global_params.edit' | translate }} </th>
+    <td mat-cell *matCellDef="let element">
+      <p *ngIf="!element.edit"><button (click)="changeEdit(element)"><mat-icon>edit</mat-icon></button></p>
+      <p *ngIf="element.edit">
+        <button (click)="updateElement(element)"><mat-icon>done_outline</mat-icon></button>
+        <button (click)="changeEdit(element)"><mat-icon>highlight_off</mat-icon></button>
+      </p>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> {{ 'global_params.delete' | translate }} </th>
+    <td mat-cell *matCellDef="let element" (click)="confirmDelete(element)"><button><mat-icon>delete</mat-icon></button></td>
+  </ng-container>
+
+  <!-- Disclaimer column -->
+  <ng-container matColumnDef="disclaimer">
+    <td mat-footer-cell *matFooterCellDef colspan="8">
+      Total: {{getTotalSum() | currency: 'EUR'}}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-footer-row *matFooterRowDef="['disclaimer']"></tr>
+</table>
+
+</div>

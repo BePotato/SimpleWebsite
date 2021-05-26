@@ -1,0 +1,93 @@
+<div class="example-container m-2">
+  <div style="display: flex;">
+    <p>{{ 'phases_comp.title' | translate }}</p>
+    <ng-template #phaseTipContent>
+      <p class="toolTipTekstColor"> <b>Phase: </b>{{ 'phases_comp.questionmark' | translate }}</p>
+    </ng-template>
+    <i class="fa fa-question-circle m-1"
+    placement="right"  [openDelay]="300" [closeDelay]="2000"
+    [ngbTooltip]="phaseTipContent"></i>
+  </div>
+  <div>{{ 'phases_comp.xtra_info' | translate }}</div>
+  <mat-form-field hintLabel="{{ 'phases_comp.xtra_entity' | translate }}" appearance="fill">
+    <mat-label>{{ 'global_params.entity' | translate }}</mat-label>
+    <mat-select [(ngModel)]="selectedValue">
+      <mat-option *ngFor="let element of entities" [value]="element">
+        {{element.code}} {{element.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="codeclass">
+      <mat-label>{{ 'phases_comp.phase_code' | translate }}</mat-label>
+      <input [(ngModel)]="newPhaseCode" matInput #input maxlength="10" placeholder="{{ 'phases_comp.placeholder_phase_code' | translate }}">
+      <mat-hint align="end">{{input.value?.length || 0}}{{ 'phases_comp.xtra_phase_code' | translate }}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field hintLabel="{{ 'phases_comp.xtra_description' | translate }}" appearance="fill" class="toelichting">
+      <mat-label>{{ 'global_params.description' | translate }}</mat-label>
+      <input [(ngModel)]="newPhaseToelichting" matInput placeholder="{{ 'phases_comp.placeholder_description' | translate }}">
+    </mat-form-field>
+    <button class="mx-2" mat-raised-button (click)="SavePhase()">{{ 'global_params.save' | translate }}</button>
+    <!--Explanation of use:
+    <ng-template #phaseExplanationContent>
+
+      <p class="toolTipTekstColor">In te vullen?</p>
+    </ng-template>
+    <i class="fa fa-question-circle mx-2"
+    placement="right"  [openDelay]="300" [closeDelay]="2000"
+    [ngbTooltip]="phaseExplanationContent"></i>-->
+
+    <hr>
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef> {{ 'global_params.code' | translate }} </th>
+        <td mat-cell *matCellDef="let phase">[P][E]#{{phase.entity.code}}_{{phase.code}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> {{ 'phases_comp.element' | translate }} </th>
+        <td mat-cell *matCellDef="let phase">{{phase.entity.name}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="toelichting">
+        <th mat-header-cell *matHeaderCellDef> {{ 'global_params.phase' | translate }} </th>
+        <td mat-cell *matCellDef="let phase">
+          <p *ngIf="!phase.edit">{{phase.phaseName}} </p>
+            <p *ngIf="phase.edit"> 
+              <mat-form-field hintLabel="" appearance="fill" class="toelichting">
+                <mat-label>{{phase.phaseName}}</mat-label>
+                <input [(ngModel)]="PUTName" matInput>
+            </mat-form-field>
+            </p> 
+
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> {{ 'global_params.edit' | translate }} </th>
+        <td mat-cell *matCellDef="let element">
+          <p *ngIf="!element.edit"><button (click)="changeEdit(element)"><mat-icon>edit</mat-icon></button></p>
+          <p *ngIf="element.edit">
+            <button (click)="updateElement(element)"><mat-icon>done_outline</mat-icon></button>
+            <button (click)="changeEdit(element)"><mat-icon>highlight_off</mat-icon></button>
+          </p>
+        </td></ng-container>
+
+       <ng-container matColumnDef="delete">
+         <th mat-header-cell *matHeaderCellDef> {{ 'global_params.delete' | translate }} </th>
+         <td mat-cell *matCellDef="let phase"><button (click)="confirmDelete(phase)"><mat-icon>delete</mat-icon></button></td>
+       </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+  </div>

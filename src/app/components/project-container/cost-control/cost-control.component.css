@@ -1,0 +1,14 @@
+p {
+    color: black;
+  }
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+  .Warning {
+    color: red
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }

@@ -1,0 +1,96 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-deletion-title">Confirm Deletion</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</ng-template>
+<div class="zonepage m-2">
+    <div style="display: flex;">
+      <p>{{ 'zones_comp.title' | translate}}</p>
+      <ng-template #zoneTipContent>
+        <p class="toolTipTekstColor"><b>Zone: </b>{{ 'zones_comp.questionmark' | translate }}</p>
+      </ng-template>
+      <i class="fa fa-question-circle m-1"
+      placement="right"  [openDelay]="300" [closeDelay]="2000"
+      [ngbTooltip]="zoneTipContent"></i>
+    </div>
+
+    <mat-form-field hintLabel="{{ 'zones_comp.zone_description' | translate}}" appearance="fill" class="toelichting">
+      <mat-label>{{ 'global_params.description' | translate}}</mat-label>
+      <input [(ngModel)]="newZoneDescription" matInput placeholder="{{ 'zones_comp.placeholder_description' | translate }}">
+    </mat-form-field>
+    <mat-form-field hintLabel="{{ 'zones_comp.code_zone' | translate}}" appearance="fill" class="toelichting">
+      <mat-label>{{ 'global_params.code' | translate}}</mat-label>
+      <input [(ngModel)]="newZoneCode" matInput placeholder="Ex. HL1BAD">     <!--Verwijderd: [(ngModel)]="newPhaseToelichting"-->
+    </mat-form-field>
+
+       <button class="mx-2" mat-raised-button (click)="SaveZone()">{{ 'global_params.save' | translate}}</button>
+       <!--Explanation of use:<ng-template #zoneExplanationContent>
+
+        <p class="toolTipTekstColor">In te vullen?</p>
+      </ng-template>
+      <i class="fa fa-question-circle mx-2"
+      placement="right"  [openDelay]="300" [closeDelay]="2000"
+      [ngbTooltip]="zoneExplanationContent"></i>-->
+</div>
+<hr>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 m-2">
+
+   <!--- Note that these columns can be defined in any order.
+         The actual rendered columns are set as a property on the row definition" -->
+
+   <ng-container matColumnDef="code">
+     <th mat-header-cell *matHeaderCellDef> {{ 'global_params.code' | translate}} </th>
+     <td mat-cell *matCellDef="let element">
+      <p *ngIf="!element.edit">[Z]#{{element.code}} </p>
+      <p *ngIf="element.edit"> 
+        <mat-form-field hintLabel="" appearance="fill" class="toelichting">
+          <mat-label>{{element.code}}</mat-label>
+          <input [(ngModel)]="PUTCode" matInput>
+      </mat-form-field>
+      </p> 
+
+
+     </td>
+   </ng-container>
+
+   <ng-container matColumnDef="description">
+     <th mat-header-cell *matHeaderCellDef> {{ 'global_params.description' | translate}} </th>
+     <td mat-cell *matCellDef="let element">
+      <p *ngIf="!element.edit">{{element.gebruiksfunctie}} </p>
+      <p *ngIf="element.edit"> 
+        <mat-form-field hintLabel="" appearance="fill" class="toelichting">
+          <mat-label>{{element.gebruiksfunctie}}</mat-label>
+          <input [(ngModel)]="PUTName" matInput>
+      </mat-form-field>
+      </p> 
+
+     </td>
+   </ng-container>
+
+   <ng-container matColumnDef="raming">
+     <th mat-header-cell *matHeaderCellDef> {{ 'zones_comp.raming' | translate}} </th>
+     <td mat-cell *matCellDef="let element"> {{element.raming | currency: 'EUR'}} </td>
+   </ng-container>
+
+   <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> {{ 'global_params.edit' | translate }} </th>
+    <td mat-cell *matCellDef="let element">
+      <p *ngIf="!element.edit && element.code != '_____X'"><button (click)="changeEdit(element)"><mat-icon>edit</mat-icon></button></p>
+      <p *ngIf="element.edit">
+        <button (click)="updateElement(element)"><mat-icon>done_outline</mat-icon></button>
+        <button (click)="changeEdit(element)"><mat-icon>highlight_off</mat-icon></button>
+      </p>
+    </td>
+  </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> {{ 'global_params.delete' | translate}} </th>
+      <td mat-cell *matCellDef="let element"><button *ngIf="!element.edit && element.code != '_____X'" (click)="confirmDelete(element)"><mat-icon>delete</mat-icon></button></td>
+    </ng-container>
+
+   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+ </table>

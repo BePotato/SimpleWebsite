@@ -1,0 +1,8 @@
+<div class=gridcontainer>
+    <app-sidebar></app-sidebar>
+    <div>
+        <app-timeline (clicked)="onClicked($event)" [timeLineLocation]="timeLineLocation"></app-timeline>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

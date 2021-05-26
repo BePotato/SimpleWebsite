@@ -1,0 +1,48 @@
+<div class="m-2">
+<h2> {{ 'Wijzigingen_comp.title' | translate }} </h2>
+<div>
+    {{ 'Wijzigingen_comp.edit_stage' | translate }}
+    <mat-form-field appearance="fill">
+        <mat-label>{{ 'global_params.stage' | translate }}</mat-label>
+        <mat-select [(ngModel)]="selectedValue">                                                            <!--Verwijderd: [(ngModel)]="selectedValue"-->
+          <mat-option *ngFor="let stage of stagesList" [value]="stage">
+            {{stage}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <button mat-raised-button (click)="SaveStage()"> {{ 'global_params.save' | translate }} </button>
+</div>
+<div>
+    {{ 'Wijzigingen_comp.add_people' | translate }}
+</div>
+<div>
+  <div>
+
+  </div>
+  <div class="wijzigingTable">
+      <table mat-table [(dataSource)]="dataSource" class="mat-elevation-z8">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> {{ 'global_params.id' | translate }} </th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="changes">
+            <th mat-header-cell *matHeaderCellDef> {{ 'Wijzigingen_comp.change' | translate }} </th>
+            <td mat-cell *matCellDef="let element">{{element.changes}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> {{ 'global_params.date' | translate }} </th>
+            <td mat-cell *matCellDef="let element">{{element.timeStamp}}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+  </div>
+</div>
+</div>

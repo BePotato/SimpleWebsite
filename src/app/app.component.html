@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--
+  <nav>
+  <ul>
+    <li class="leftButton"><button mat-button class="menu-button" (click)="sidenav.toggle()"><mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon></button></li>
+    <li class="logo"><a [routerLink]="['/Home']">BouwData© Projects</a></li>
+    <li class="rightButton"><button mat-button class="menu-button">uitloggen</button></li>
+    <li class="rightButton"><button mat-button class="menu-button">Nederlands</button></li>
+    <li class="rightButton"><button mat-button class="menu-button" [routerLink]="['/elearner']">ELearner</button></li>
+  </ul>
+</nav>
+-->
+<nav class="navbar navbar-expand-lg navbar-dark navbar">
+  <button mat-button class="menu-button" (click)="sidenav.toggle()"><mat-icon class="white-icon">{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon></button>
+  <span class="navbar-brand mb-0 h1" style="margin-left: 2%;" [routerLink]="['/Home']">{{'navbar.title' | translate}}</span>
+  <div class="navbar-nav ml-auto">
+    <a class="nav-item nav-link"  [routerLink]="['/Home']">{{'navbar.home' | translate}}</a>
+    <a class="nav-item nav-link" [routerLink]="['/elearner']">{{'navbar.elearner' | translate}}</a>
+    <app-select-language class="m-2"></app-select-language>
+  </div>
+</nav>
+<body>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav autoFocus="false" mode="over" [(opened)]="isMenuOpen" class="sidenav" (click)="onSidenavClick()">
+      <a class="sidenavTitle">{{'sidebar.runningProjects' | translate}}</a>
+      <a class="sidenavSubTitle">{{'sidebar.projectList' | translate}}</a>
+      <a class= "sidenavProject" mat-button routerLink="/page1">{{'sidebar.project' | translate}} 1</a>
+      <a class= "sidenavProject" mat-button routerLink="/page2">{{'sidebar.project' | translate}} 2</a>
+      <a class= "sidenavProject" mat-button routerLink="/page3">{{'sidebar.project' | translate}} 3</a>
+      <a class="sidenavSubTitle">{{'sidebar.previousProjects' | translate}}</a>
+      <a class= "sidenavProject" mat-button routerLink="/page4">{{'sidebar.project' | translate}} 4</a>
+      <a class= "sidenavProject" mat-button routerLink="/page5">{{'sidebar.project' | translate}} 5</a>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</body>
+<footer></footer>
+<!--
+<h2>File Upload</h2>
+<input type="text" placeholder="Save with Key" name="id" [(ngModel)]="id">
+<br><br>
+<input type="file" (change)="showPreview($event)">
+<button (click)="save()">Save</button>
+<h2>File View</h2>
+<input type="text" name="file" [(ngModel)]="file" placeholder="Enter Unique Search Key">
+<button (click)="view()">View</button>
+-->

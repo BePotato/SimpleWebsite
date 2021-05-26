@@ -1,0 +1,212 @@
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: absolute;
+    z-index: 1; /* Stay on top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav h3 {
+    padding: 0px 8px 6px 16px;
+    font-size: 30px;
+    text-decoration: underline;
+  }
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: greenyellow;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+#one
+{
+    padding-left: 160px;
+  margin-top:50px;
+ box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+}
+.it .btn-orange
+{
+	background-color: transparent;
+	border-color: #777!important;
+	color: #777;
+	text-align: left;
+  width:100%;
+}
+.it input.form-control
+{
+	height: 54px;
+	border:none;
+  margin-bottom:0px;
+	border-radius: 0px;
+	border-bottom: 1px solid #ddd;
+	box-shadow: none;
+}
+.it .form-control:focus
+{
+	border-color: #ff4d0d;
+	box-shadow: none;
+	outline: none;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.it .btn-new, .it .btn-next
+{
+	margin: 30px 0px;
+	border-radius: 0px;
+	background-color: #333;
+	color: #f5f5f5;
+	font-size: 16px;
+	width: 155px;
+}
+.it .btn-next
+{
+	background-color: #2b2c7e;
+  color: whitesmoke;
+  font: bold;
+}
+.it .btn-check
+{
+  cursor:pointer;
+  line-height:54px;
+  color:black;
+}
+.it .uploadDoc
+{
+	margin-bottom: 20px;
+}
+.it .uploadDoc
+{
+	margin-bottom: 20px;
+}
+.it .btn-orange img {
+    width: 30px;
+}
+p
+{
+  font-size:16px;
+  text-align:center;
+  margin:30px 0px;
+}
+.it #uploader .docErr
+{
+	position: absolute;
+    right:auto;
+    left: 10px;
+    top: -56px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #fff;
+    color: red;
+    box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
+    display: none;
+}
+.it #uploader .docErr:after
+{
+	content: '\f0d7';
+	display: inline-block;
+	font-family: FontAwesome;
+	font-size: 50px;
+	color: #fff;
+	position: absolute;
+	left: 30px;
+	bottom: -40px;
+	text-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+}
+
+h2 {
+    color: black;
+    text-align: left; 
+}
+p {
+    color: black;
+    text-align: left; 
+}
+h3 {
+    color: white;
+    text-align: left; 
+}
+ul {
+    counter-reset: index;  
+    padding: 0;
+    max-width: 300px;
+  }
+  
+  /* List element */
+  li {
+    color: black;
+    counter-increment: index; 
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    box-sizing: border-box;
+  }
+  
+  
+  /* Element counter */
+  li::before {
+    content: counters(index, ".", decimal-leading-zero);
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    min-width: 50px;
+    padding-right: 12px;
+    font-variant-numeric: tabular-nums;
+    align-self: flex-start;
+    background-image: linear-gradient(to bottom, aquamarine, orangered);
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  
+  /* Element separation */
+  li + li {
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  
+@use postcss-preset-env {
+    stage: 0;
+    autoprefixer: {
+      grid: true;
+    }
+    browsers: last 2 versions
+  }
+  
+
+
+      

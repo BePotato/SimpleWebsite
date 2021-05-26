@@ -1,0 +1,7 @@
+<div class='sidenav'>
+    <h3>{{ProjectNaam}}</h3>
+    <p *ngFor="let item of menuItems; index as i">
+      <a [routerLink]="links[i]">{{item}}</a>
+    </p>
+  </div>
+  

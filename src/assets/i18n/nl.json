@@ -1,0 +1,183 @@
+{
+    "global_params":{
+      "code":"Code",
+      "description":"Beschrijving",
+      "save":"Opslaan",
+      "edit":"Aanpassen",
+      "delete":"Verwijderen",
+      "stage":"Stage",
+      "id":"Id",
+      "date":"Datum",
+      "entity":"Entiteit",
+      "storey":"Verdieping",
+      "phase":"Fase",
+      "zone":"Zone",
+      "amount":"Aantal",
+      "name":"Naam",
+      "submit":"Verstuur",
+      "work_in_progress":"Hier komt een overzichtpagina"
+    },
+    "navbar": {
+        "title": "BouwData©",
+        "home": "Home",
+        "elearner":"Elearner"
+    },
+    "sidebar":{
+        "projectList":"Projectlijst",
+        "project":"Project",
+        "runningProjects":"Lopende Projecten",
+        "previousProjects":"Vorige Projecten"
+    },
+    "home_screen_comp":{
+        "start":"Start aan projecten",
+        "block1":{
+            "title":"Bepaal snel uw investeringskost.",
+            "txt":"BouwData© ondersteunt de bouwheer bij de bepaling van de investeringskost bij het begin van een project, aan de hand van een checklist voorzien in de norm NEN 2699 aangevuld met tabel 1 van de NL/BB-SfB (plus)"
+        },
+        "block2":{
+            "title":"Continue beeld van de investeringskosten",
+            "txt":"De actualisatie van het bouwbudget gebeurt op basis van earned value management dat gesteund is op werkgehelen, planning en het dagboek der werken."
+        },
+        "block3":{
+            "title":"Werken volgens BouwData©",
+            "txt":"Werken volgens een vaste werkmethodiek gestoeld op normen en standaarden. De ISO of EN, NBN en buitenlandse normen, meestal uit Nederland of het Verenigd Koninkrijk."
+        },
+        "block4":{
+            "title":"Ingebouwde ELearner",
+            "txt":"Leer hoe de normen en standaarden in de praktijk werken. Met als resultaat een betrouwbare benchmark."
+        }
+    },
+    "timeline_comp":{
+        "definition":"Project Definitie",
+        "structure":"Structuur / Ontwerp",
+        "design":"Ontwerp",
+        "elaboration":"Uitwerking",
+        "execution":"Uitvoering",
+        "delivery":"Oplevering",
+        "operation":"Exploitatie"
+    },
+    "elearner_screen_comp":{
+        "title":"Welkom bij de ELearner van BouwData©",
+        "block1":{
+            "txt1":"Wat is BouwData ?",
+            "txt2":"BouwData© is een werkfilosofie en kan toegepast worden van zodra men beschikt over groupware en een spreadsheet.",
+            "txt3":"Het kent acht afsprakenstelsels en biedt structuur aan een CDE of Common Data Environment waarbinnen BIM, BMS en CAFM systemen gesitueerd zijn. Deze afsprakenstelsels zijn in Excel formaat gratis te downloaden na registratie.",
+            "txt4":"Het onderzoek is gestart in 2008 met steun van het IWT (nr 080429) en is gebaseerd op bestaande normen en standaarden in België, Nederland, UK, VS, ... en wordt continu bijgewerkt wanneer er nieuwe versies op de markt verschijnen."
+        },
+        "block2":{
+            "txt1":"Waarom?",
+            "txt2":"Een klassieke design-bid-build in België heeft volgende \"eigenaardigheden\":",
+            "txt3":"Opmetingen gebeuren door de architect maar de verantwoordelijkheid voor de controle van forfaitaire hoeveelheden ligt bij de aannemer. Dit geeft aanleiding tot slordigheden aan ontwerperszijde en zet de deur voor speculaties aan aannemerszijde wagenwijd open. M.a.w. het is een bron van verrekeningen.",
+            "txt4":"Het opmaken van de meetstaat behoort tot de 'creatieve vrijheid' van de architect. Hierdoor krijgt de calculator telkens te maken met andere meetstaten waardoor project overkoepelende kennisopbouw nagenoeg onmogelijk wordt.",
+            "txt5":"In de taakomschrijving van een calculator staat dat hij/zij de indirecte kosten moet begroten en deze \"oordeelkundig\" dient te verdelen over de posten vermeld in de meetstaat. Afhankelijk van het project zal dit bedrag, samen met de algemene kosten en het winst/risico percentage, 18% tot 30% bedragen t.o.v. de directe productiekost. De verdeling gebeurt uiteraard i.f.v. het commercieel inzicht van de inschrijver. M.a.w. de reële samenstelling van de kostprijs is enkel door de aannemer gekend."
+        },
+        "block3":{
+            "txt1":"Voor wie?",
+            "txt2":"Eigenlijk voor alle personen die zich kunnen terug vinden in onderstaand citaat:",
+            "txt3":"\"Ideaal zou zijn wanneer alle partijen in een concreet bouwproces zo professioneel zouden zijn dat zij in alle bescheidenheid hun plaats in dat proces zouden kennen, daarmee de professionaliteit van de andere partijen erkennend en in wederzijds vertrouwen het eigen belang met het algemeen belang van het project zouden kunnen laten samenvallen.\"",
+            "txt4":"\"Het klinkt te mooi om waar te zijn, maar het is in de praktijk al vertoond.\"",
+            "citName":"ir. Otto Sluizer in STABU Bulletin"
+        },
+        "btn_course":"Ga naar opleiding"
+    },
+    "cost_control_comp":{
+      "title":"Kostencontrole",
+      "project_uitleg":"Project bevindt zich in Stage 1, voorlopig is er geen kostencontrole nodig",
+      "tot_investKost":"Totale (Initiële) Investeringskost:",
+      "tot_raming":"Totale (Voorlopige) Raming:"
+    },
+    "overview_comp":{
+      "title":"Overzicht Testproject",
+      "entity":"Entiteiten:",
+      "small_text":"klik op een entiteit voor meer info",
+      "temp_ram":"Voorlopige raming:",
+      "aantal_verdiep":"Aantal verdiepingen:",
+      "opp_bouwgrnd":"oppervlakte bouwgrond:",
+      "tot_investKost":"Totale (Initiële) Investeringskost:",
+      "tot_raming":"Totale (Voorlopige) Raming:",
+      "warn_kost":"Samenvatting Cost Control:",
+      "warn_info":"Geen, alles is prima!",
+      "warn_budget":"Opgelet, het budget is voorlopig ontoereikend.",
+      "tot_grnd_opp":"Totale grondoppervlakte:",
+      "tot_bouw_opp":"Totale bouwoppervlakte:",
+      "klik_info":"Klik in de elemententabel voor oppervlakte per entiteit",
+      "Verbonden_bedrijf":"Verbonden bedrijven:"
+    },
+    "raming_comp":{
+      "title":"Maak hier ramingen",
+      "level1":"Niveau 1",
+      "level2":"Niveau 2",
+      "level3":"Niveau 3",
+      "small_text":"Laat leeg indien niet van toepassing",
+      "raming":"Raming",
+      "letters_word":"Letters/woord",
+      "filter_on":"Filter op:"
+    },
+    "entiteiten_comp":{
+      "title":"Voeg hieronder nieuwe entiteiten toe",
+      "entity_name":"Naam van de entiteit",
+      "small_text":"Raming wordt aangevuld als er worden gevonden",
+      "temp_raming":"Voorlopige raming*",
+      "placeholder_entity":"Ex. Niewbouw",
+      "placeholder_code":"Ex. NIE1",
+      "placeholder_description":"Ex. Nieuwbouw aan straatkant",
+      "questionmark":"Dit stemt overeen met een bouwwerk. Technisch Universiteit Delft definieert dit als volgt: een bouwwerk is de complete verzameling van functionele objecten en/of fysieke objecten benodigd aan een huisvestingsbehoefte te voldoen."
+    },
+    "phases_comp":{
+      "title":"Geef hier de entiteiten hun phases.",
+      "xtra_info":"Indien een phase over meer dan één entiteit gaat, kies dan __X Multiple Entities",
+      "xtra_entity":"Entiteit om phase aan te geven",
+      "xtra_description":"Omschrijving van de phase",
+      "phase_code":"Phase code",
+      "placeholder_phase_code":"Ex. A_102",
+      "xtra_phase_code":"/10 tekens",
+      "element":"Element",
+      "placeholder_description":"Ex. Bouw Fase 1",
+      "questionmark":"Dit is een klasse die uitsluitend binnen de BouwData werkmethodiek bestaat en tot doel heeft deelprojecten te definiëren. Deze deelprojecten kennen elk een investering die uitgezet wordt in de tijd waardoor de benodigde financiering van een project inzichtelijk gemaakt kan worden."
+    },
+    "confirmDelete_comp":{
+      "question":"Ben je zeker dat je deze item wilt verwijderen?",
+      "confirm":"Verwijder",
+      "cancel":"Annuleer"
+    },
+    "storey_comp":{
+      "title":"Voeg hieronder nieuwe verdiepingen toe. Deze verdiepingen gaan over alle entiteiten heen.",
+      "add_storey":"Voeg bovenverdieping toe",
+      "add_basement":"Voeg kelderverdieping toe",
+      "remove_storey":"Verwijder bovenverdieping",
+      "remove_basement":"Verwijder kelderverdieping",
+      "questionmark":"Dit stemt overeen met een vloer of bouwlaag. De onderzijde van de constructieve vloer vormt tevens de ondergrens van de bouwlaag.",
+      "xtra_description":"Beschrijving van de verdieping",
+      "xtra_code":"Code voor de verdieping"
+    },
+    "Wijzigingen_comp":{
+      "title":"Wijzigingen",
+      "edit_stage":"Verander de stage van het project:",
+      "add_people":"Voeg personen of groepen toe aan het project:",
+      "change":"Aard van Wijziging",
+      "actor":"Doorgevoerd door"
+    },
+    "zones_comp":{
+      "title":"Voeg hieronder nieuwe zones toe",
+      "zone_description":"Omschrijving van de Zone",
+      "code_zone":"ZoneCode",
+      "function":"gebruiksfunctie",
+      "raming":"raming",
+      "placeholder_description":"Ex. Hotel type 1 Beheer en algemene directie",
+      "questionmark":"Cuneco Classification Systems zelf geeft geen Engelstalige definitie. Ook is deze klasse niet expliciet opgenomen in de ISO 12006-2. Evenwel, in grote projecten, bv. ziekenhuizen, kan het opportuun zijn om aan deze systeem variabele een invulling te geven."
+    },
+    "firebase_excel_comp":{
+      "title":"Upload zone van excel bestanden en andere data",
+      "my_docs":"Mijn documenten",
+      "submit_key":"Verstuur met sleutel (optioneel)",
+      "search_key":"Geef unieke zoek sleutel",
+      "file_view":"Bestanden databank",
+      "show_file":"Toon bestanden",
+      "show_all_files":"Toon alle bestanden"
+    },
+    "invest_kost_comp":{
+      "title":"Voorberekende Investeringskost (voorlopig totaal budget):",
+      "tot_number":"Vooropgestelde Investering",
+      "edit":"Pas aan:"
+    }
+}

@@ -1,0 +1,54 @@
+/* NavBar*/
+
+nav{
+    background: #040351;
+}
+
+/*sidenavigation*/
+.sidenav-container {
+  flex: 1;
+  background: white;
+  height:100%;
+}
+
+.sidenav {
+  background: #040351;
+    min-width: 240px;
+  }
+.sidenavTitle{
+  font-size: 2em;
+  font-weight: bold;
+  background: #040351;
+  font-weight:bold;
+    color: whitesmoke;
+}
+.sidenavSubTitle{
+  font-size: 1.5em;
+  text-decoration: underline;
+  background: #040351;
+  font-weight:bold;
+  color: whitesmoke;
+}
+
+a {
+  font-size: 1.5em;
+  display: block;
+  padding:12px 24px;
+  width: 100%;
+  text-align: left;
+  font-weight:bold;
+    color: whitesmoke;
+    }
+    .sidenavProject{
+      background: #040351;
+    }
+
+  .white-icon{
+    color: white;
+  }
+
+/* Body */
+::ng-deep .tooltip-inner{
+  width: 350px;
+  max-width: 350px;
+}

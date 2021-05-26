@@ -1,0 +1,38 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+p {
+    color: black;
+  }
+
+  div {
+    color: black;
+  }
+
+  .testclass{
+    width:100px !important;
+    /*-- Met klasses kan je de breedte van zo'n formfield aanpassen --*/
+  }
+  .codeclass {
+    width: 120px;
+  }
+  .toelichting {
+    width: 300px;
+  }
+  mat-form-field {
+    padding: 0 0 0 5px;
+  }
+  table {
+    width: 100%;
+  }
+  table button {
+    border: 0;
+    background: inherit;
+  }
+
+  .toolTipTekstColor{
+    color: white;
+  }
+
+  table p {
+    margin: 0;
+  }

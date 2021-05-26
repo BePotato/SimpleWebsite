@@ -1,0 +1,81 @@
+ /* Meter */
+
+  meter {
+    width: 100%;
+    min-width: 500px;
+    height: 50px;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  meter::-webkit-meter-optimum-value {
+    box-shadow: 0 5px 5px -5px #999 inset;
+    background-color: #00910c;
+    background-size: 100% 100%;
+  }
+
+  meter::-webkit-meter-bar {
+    background-image: linear-gradient(
+        90deg,
+        #CAF0F8 14.2%,
+        #ADE8F4 14.2%,
+        #ADE8F4 28.5%,
+        #90E0EF 28.5%,
+        #90E0EF 42.8%,
+        #48CAE4 42.8%,
+        #48CAE4 57.1%,
+        #00B4D8 57.1%,
+        #00B4D8 71.4%,
+        #0096C7 71.4%,
+        #0096C7 85.9%,
+        #0077B6 85.9%
+      );
+      box-shadow: 0 5px 5px -5px #333 inset;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+  }
+
+li {
+    color: black;
+    display: inline-block;
+    *display: inline; /* For IE7 */
+    zoom: 1; /* Trigger hasLayout */
+    width: 14.2857%;
+    text-align: center;
+}
+
+.timeline .mat-button-base {
+  margin: 1px 1px 1px 0;
+  padding: 0 2px;
+  overflow: unset;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  font-weight: normal;
+}
+
+
+.timeline {
+  min-width: 600px;
+  color: black;
+  background-color: #f8f8f8;
+  padding: 0 0 10px 0;
+}
+
+hr{
+  background-color: #f8f8f8;
+  margin: 0;
+}
+.bold {
+  background: #ADE8F4;
+}
+.toolTipTekstColor{
+  color: white;
+}
+::ng-deep .tooltip-inner{
+  width: auto;
+  max-width: auto;
+}

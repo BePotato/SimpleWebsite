@@ -1,0 +1,183 @@
+{
+    "global_params":{
+    "code":"Code",
+    "description":"Description",
+    "save":"Sauvegarder",
+    "edit":"Changer",
+    "delete":"Supprimer",
+    "stage":"Étape",
+    "id":"Id",
+    "date":"Date",
+    "entity":"Entité",
+    "storey":"Étage",
+    "phase":"Phase",
+    "zone":"Zone",
+    "amount":"Nombre",
+    "name":"Nom",
+    "submit":"envoyer",
+    "work_in_progress":"Ici vient une page donnant une vue d'ensemble"
+  },
+    "navbar": {
+        "title": "BouwData©",
+        "home": "Acceuil",
+        "elearner":"Elearner"
+    },
+    "sidebar":{
+        "projectList":"Liste de projets",
+        "project":"Projet",
+        "runningProjects":"Projet en Cours",
+        "previousProjects":"Ancien Projets"
+    },
+    "home_screen_comp":{
+        "start":"Commencer un projet",
+        "block1":{
+            "title":"Déterminez rapidement votre coût d'investissement.",
+            "txt":"BouwData © accompagne le client dans la détermination du coût d'investissement au démarrage d'un projet, sur la base d'une check-list fournie dans la norme NEN 2699 complétée par le tableau 1 du NL / BB-SfB (plus)"
+        },
+        "block2":{
+            "title":"Image continue des coûts d'investissement",
+            "txt":"Le budget de construction est mis à jour sur la base de la gestion de la valeur acquise qui s'appuie sur les unités de travail, la planification et le journal des travaux."
+        },
+        "block3":{
+            "title":"Travailler selon BouwData©",
+            "txt":"Travailler selon une méthode de travail fixe basée sur des normes et standards. Les normes ISO ou EN, NBN et étrangères, généralement des Pays-Bas ou du Royaume-Uni."
+        },
+        "block4":{
+            "title":"ELearner intégré",
+            "txt":"Apprenez comment les normes et standards fonctionnent dans la pratique. Le résultat est une référence fiable."
+        }
+    },
+    "timeline_comp":{
+        "definition":"Définition du projet",
+        "structure":"Structure / Conception",
+        "design":"Design",
+        "elaboration":"Élaboration",
+        "execution":"Execution",
+        "delivery":"livraison",
+        "operation":"Exploitation"
+    },
+    "elearner_screen_comp":{
+        "title":"Bienvenue dans le Elearner de BouwData©",
+        "block1":{
+            "txt1":"Qu'est-ce BouwData ?",
+            "txt2":"BouwData © est une philosophie de travail et peut être appliquée dès que l'on dispose d'un groupware et d'un spreadsheet.",
+            "txt3":"Il dispose de huit systèmes de rendez-vous et fournit une structure à un CDE ou Common Data Environment dans lequel sont situés les systèmes BIM, BMS et CAFM. Ces systèmes de rendez-vous peuvent être téléchargés gratuitement au format Excel après inscription.",
+            "txt4":"La recherche a débuté en 2008 avec le soutien de l'IWT (no 080429) et est basée sur les normes et standards existants en Belgique, aux Pays-Bas, au Royaume-Uni, aux États-Unis, ... et est continuellement mise à jour lorsque de nouvelles versions apparaissent sur le marché."
+        },
+        "block2":{
+            "txt1":"Pourquoi?",
+            "txt2":"Une offre de conception classique construite en Belgique présente les \"particularités\" suivantes:",
+            "txt3":"Les mesures sont effectuées par l'architecte, mais la responsabilité de vérifier les quantités fixes incombe à l'entrepreneur. Cela donne lieu à une négligence du côté des concepteurs et ouvre grand la porte à la spéculation du côté des entrepreneurs. En d'autres termes c'est une source de règlement.",
+            "txt4":"L'élaboration du relevé de mesure fait partie de la «liberté de création» de l'architecte. En conséquence, le calculateur doit gérer différents états de mesure, ce qui rend presque impossible l'acquisition de connaissances à l'échelle du projet.",
+            "txt5":"La description de poste d'un calculateur précise qu'il doit estimer les coûts indirects et les répartir «judicieusement» entre les éléments énumérés dans le relevé de mesure. En fonction du projet, ce montant, ainsi que les frais généraux et le pourcentage bénéfice / risque, sera de 18% à 30% par rapport au coût de production direct. La distribution se fait bien entendu selon la vision commerciale du soumissionnaire. En d'autres termes la composition réelle du prix de revient n'est connue que du contractant."
+        },
+        "block3":{
+            "txt1":"Pour qui?",
+            "txt2":"En fait pour toutes les personnes qui peuvent se retrouver dans le devis ci-dessous:",
+            "txt3":"\"Idéalement, toutes les parties dans un processus de construction concrète seraient si professionnelles qu'elles sauraient leur place dans ce processus en toute modestie, reconnaissant le professionnalisme des autres parties et, dans la confiance mutuelle, leur propre intérêt et l'intérêt général du projet. peut coïncider.\"",
+            "txt4":"\"Cela semble trop beau pour être vrai, mais cela a déjà été démontré dans la pratique.\"",
+            "citName":"ir. Otto Sluizer dans STABU Bulletin"
+        },
+        "btn_course":"Commencer le cours"
+    },
+    "cost_control_comp":{
+      "title":"Contrôle des frais",
+      "project_uitleg":"Le projet se trouve dans le 1er stade, le contrôle des frais n'est donc pas encore nécessaire",
+      "tot_investKost":"Totalité (initiale) des frais d'investissement:",
+      "tot_raming":"Totalité (provisoire) des estimations:"
+    },
+    "overview_comp":{
+      "title":" Apreçu du projet test",
+      "entity":"Entités:",
+      "small_text":"Cliquez sur une entité pour plus d'infos",
+      "temp_ram":"Estimation provisoire:",
+      "aantal_verdiep":"Nombre d'étages:",
+      "opp_bouwgrnd":" Superficie du terrain à bâtir:",
+      "tot_investKost":"Totalité (initiale) des frais d'investissement:",
+      "tot_raming":"Totalité (provisoire) des estimations:",
+      "warn_kost":"Contrôle des frais condensé:",
+      "warn_info":"Aucun, tout est en ordre!",
+      "warn_budget":"Opgelet, het budget is voorlopig ontoereikend.",
+      "tot_grnd_opp":"Superficie totale:",
+      "tot_bouw_opp":"Superficie totale du terrain à bâtir:",
+      "klik_info":"Cliquez sur le tableau pour voir la superficie par entité",
+      "Verbonden_bedrijf":"Entreprises liées:"
+    },
+    "raming_comp":{
+      "title":"Créez des estimations ici",
+      "level1":"Niveau 1",
+      "level2":"Niveau 2",
+      "level3":"Niveau 3",
+      "small_text":"Remplissez que si nécessaire",
+      "raming":"Estimation",
+      "letters_word":"Lettres/mot",
+      "filter_on":"Filtrer:"
+    },
+    "entiteiten_comp":{
+      "title":"Ajoutez ci-dessous de nouvelles entités",
+      "entity_name":"Nom de l'entité",
+      "small_text":" L'estimation sera completé automatiquement",
+      "temp_raming":"Estimation provisoire*",
+      "placeholder_entity":"Ex. nouveau bâtiment",
+      "placeholder_code":"Ex. NIE1",
+      "placeholder_description":"Ex. nouveau bâtiment côté rue",
+      "questionmark":"Cela correspond à un bâtiment. L'Université technique de Delft définit cela comme suit: un bâtiment est la collection complète d'objets fonctionnels et / ou d'objets physiques nécessaires pour répondre à un besoin de logement."
+    },
+    "phases_comp":{
+      "title":"Donnez des phases aux entités ici",
+      "xtra_info":" Si une phase concerne plusieurs entités, choisissez __X Multiple Entities",
+      "xtra_entity":"Entité pour indiquer la phase",
+      "xtra_description":"Description de la phase",
+      "phase_code":"Code de la phase",
+      "placeholder_phase_code":"Ex. A_102",
+      "xtra_phase_code":"/10 caractère(s)",
+      "element":"Élément",
+      "placeholder_description":"Ex. Construction Phase 1",
+      "questionmark":"Il s'agit d'une classe qui existe exclusivement dans la méthode de travail BouwData et qui vise à définir des sous-projets. Ces sous-projets ont chacun un investissement qui est tracé dans le temps, de sorte que le financement requis d'un projet puisse être rendu transparent."
+    },
+    "confirmDelete_comp":{
+      "question":"Vous êtes sûr de vouloir supprimer ceci?",
+      "confirm":"Supprimer",
+      "cancel":"Annuler"
+    },
+    "storey_comp":{
+      "title":"Ajouter ci-dessous de nouveaux étages. Ces étages couvrent toutes les entités.",
+      "add_storey":"Ajouter un étage supérieur",
+      "add_basement":"Ajouter un sous-sol",
+      "remove_storey":"Supprimer un étage supérieur",
+      "remove_basement":"Supprimer un sous-sol",
+      "questionmark":"Cela correspond à un sol ou une couche de construction. La face inférieure du plancher structurel forme également la limite inférieure de la couche de construction.",
+      "xtra_description":"Description de l'étage",
+      "xtra_code":"Code pour l'étage"
+    },
+    "Wijzigingen_comp":{
+      "title":"Modifications",
+      "edit_stage":"Changez l'étape du projet:",
+      "add_people":"Ajoutez des personnes ou des groupes au projet:",
+      "change":"'Nature' de la modification",
+      "actor":"Réalisé par"
+    },
+    "zones_comp":{
+      "title":"Ajoutez ci-dessous de nouvelles zones",
+      "zone_description":"Description de la zone",
+      "code_zone":"Code de la zone",
+      "function":"Fonction utilitaire",
+      "raming":"estimation",
+      "placeholder_description":"Ex. Hôtel type 1 Direction et direction générale",
+      "questionmark":"Les systèmes de classification de Cuneco lui-même ne fournissent pas de définition anglaise. Cette classe n'est pas non plus explicitement incluse dans l'ISO 12006-2. Cependant, dans les grands projets, par exemple les hôpitaux, il peut être approprié de donner corps à cette variable système."
+    },
+    "firebase_excel_comp":{
+      "title":"Portail de téléchargement pour des documents Excel et autres",
+      "my_docs":"Mes documents",
+      "submit_key":"Envoyer avec une clef (optionel)",
+      "search_key":" Donner une clef de recherche",
+      "file_view":"Base de données des fichiers",
+      "show_file":"Montrer les documents",
+      "show_all_files":" Montrer tout les documents"
+    },
+    "invest_kost_comp":{
+      "title":"Coût d'investissement calculé (budget total prévisionnel):",
+      "tot_number":"Total en chiffres",
+      "edit":"Changer:"
+    }
+}

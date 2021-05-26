@@ -1,0 +1,112 @@
+<h2> {{ 'overview_comp.title' | translate }}</h2>
+
+<div class="gridcontainer">
+    <div class="item-one">
+        <h3>{{ 'overview_comp.entity' | translate }} </h3>
+        <a class="smallInfo" [routerLink]="['../Entiteiten']">Naar Entiteitenpagina</a>
+        <p class="smallInfo">{{ 'overview_comp.small_text' | translate }}</p>
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+  <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element.entity[column]}} </td>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+      <div class="example-element-detail"
+           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+        <div class="example-element-description">
+            <hr>
+          <p>{{ 'overview_comp.temp_ram' | translate }} {{ getTotalRamingForEntity(element) | currency: 'EUR'}}</p>
+          <p>Voorziene phases: </p>
+          <ul *ngFor="let phase of element.entity.phases">
+            <li>[P]{{phase.code}} {{phase.phaseName}}</li>
+          </ul>
+          <!---<p>{{ 'overview_comp.opp_bouwgrnd' | translate }} {{element.surface}}m²</p>-->
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+</table>
+
+      </div>
+
+    <div class="item-two">
+      <h3 class="TitleCostControl">{{ 'overview_comp.warn_kost' | translate }}</h3>
+      <!--- <a class="smallInfo" [routerLink]="['../CostControl']">Naar Cost Control</a> -->
+        <h5>{{ 'overview_comp.tot_investKost' | translate }}</h5>
+        <p>{{TotalBudget | currency: 'EUR'}}</p>
+
+        <h5>{{ 'overview_comp.tot_raming' | translate }}</h5>
+        <p>{{TotalRaming | currency: 'EUR'}}</p>
+        <p *ngIf="CheckAllDataReceived()"> 
+          <apx-chart
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [labels]="chartOptions.labels"
+            [responsive]="chartOptions.responsive"
+          ></apx-chart>
+        </p>
+        
+        <p class="Warning" *ngIf="TotalBudget < TotalRaming">
+          <b>{{ 'overview_comp.warn_budget' | translate }} </b><br>
+          <a [routerLink]="['../Investeringskost']">Kijk de investeringskosten na</a> <br>
+          <a [routerLink]="['../Raming']">Kijk de ramingen na</a> <br>
+          Entiteit met hoogste raming: {{ getMaxRamingOfEntities() }}
+        </p>
+        
+      </div>
+      
+      
+      <div class="item-three">
+        <h3>Laatste wijzigingen</h3>
+        <a class="smallInfo" [routerLink]="['../Wijzigingen']">Zie alle wijzigingen</a> <br>
+        <div class="wijzigingTable">
+          <table mat-table [(dataSource)]="logDataSource" class="mat-elevation-z8">
+    
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+    
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> {{ 'global_params.id' | translate }} </th>
+                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+              </ng-container>
+    
+              <ng-container matColumnDef="changes">
+                <th mat-header-cell *matHeaderCellDef> {{ 'Wijzigingen_comp.change' | translate }} </th>
+                <td mat-cell *matCellDef="let element">{{element.changes}}</td>
+              </ng-container>
+    
+              <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> {{ 'global_params.date' | translate }} </th>
+                <td mat-cell *matCellDef="let element">{{element.timeStamp}}</td>
+              </ng-container>
+    
+              <tr mat-header-row *matHeaderRowDef="logColumnsToDisplay"></tr>
+              <tr mat-row *matRowDef="let row; columns: logColumnsToDisplay;"></tr>
+            </table>
+      </div>
+      </div>
+      <div class="item-two">
+        <h5>{{ 'overview_comp.tot_grnd_opp' | translate }} 1.3km²</h5>
+        <h5>{{ 'overview_comp.tot_bouw_opp' | translate }} 1.0km²</h5>
+        <!--{{ 'overview_comp.klik_info' | translate }} -->
+      </div>
+      <div class="item-four">
+        <h3>{{ 'overview_comp.Verbonden_bedrijf' | translate }}</h3>
+        <p>BouwData</p>
+        <p>UZ Gent</p>
+        <p>Volt Architecten</p>
+      </div>
+
+
+</div>
