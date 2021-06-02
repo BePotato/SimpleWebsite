@@ -143,7 +143,7 @@ import { ConfirmDeleteComponent } from './components/project-container/Services-
     ]),
     BrowserAnimationsModule,
 
-    //AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
