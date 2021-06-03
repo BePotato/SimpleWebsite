@@ -1,0 +1,60 @@
+#---
+#ansible_ssh_user: root
+---
+- hosts: simplewebsite
+  user: root
+  connection: local
+  gather_facts: yes
+  become: yes
+
+  vars:
+    - homeDir: /home
+    - appDir : simplewebsite
+    - repo: SimpleWebsite
+    - account: root
+    - privateKey: /root/.ssh/id_rsa
+    - NODEJS_VERSION: "8"
+    - ansible_distribution_release: "xenial" #trusty
+    - var_node: /home
+    - item: nodejs install
+  tasks:  
+  - name: Install nodejs
+    yum:
+      name: nodejs
+      state: latest
+
+  - name: Create APP Directory
+    file: path={{homeDir}}/{{appDir}} state=directory
+  
+  - name: install git
+    yum: 
+      name: git
+      state: latest
+  
+  - name: Git Clone Repo
+    git: repo=https://github.com/BePotato/SimpleWebsite.git dest={{homeDir}}/{{appDir}} update=yes force=yes  
+    register: git_finished
+
+  - name: Running NPM install
+    npm: path={{homeDir}}/{{appDir}}/BouwDataWebApp
+    register: npm_finished
+    when: git_finished.changed
+
+  - name: install nginx
+    yum:
+      name: nginx
+      state: latest
+
+  - name: stop docker 
+    command: docker stop production
+    ignore_errors: yes
+
+  - name: remove docker
+    command: docker rm production
+    ignore_errors: yes
+  
+  - name: build image
+    command: chdir={{homeDir}}/{{appDir}}/BouwDataWebApp docker build -t av-app-multistage-image .
+
+  - name: docker run 
+    command: chdir={{homeDir}}/{{appDir}}/BouwDataWebApp docker run --name production -d -p 8082:80 av-app-multistage-image
