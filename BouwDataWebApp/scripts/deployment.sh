@@ -30,7 +30,7 @@ then
 
   echo "-------------------------------------"
   echo "installing NPM Firebase..."
-  sudo npm install -g firebase-tools
+  npm install -g firebase-tools
   echo "-------------------------------------"
   echo " "
 

@@ -50,7 +50,7 @@ pipeline {
     }
     stage('deploy production via ansible'){
       steps{
-        ansiblePlaybook installation: 'Ansible', inventory: '/home/simplewebsite/hosts', playbook: '/home/simplewebsite/groupvars/app.yml'
+        ansiblePlaybook installation: 'Ansible', inventory: '${WORKSPACE}/hosts', playbook: '${WORKSPACE}/groupvars/app.yml'
       }
     }
   }
