@@ -39,18 +39,17 @@ pipeline {
       //}
     }
 
-
+    stage('deploy production via ansible'){
+      steps{
+        ansiblePlaybook installation: 'Ansible', inventory: '${WORKSPACE}/hosts', playbook: '${WORKSPACE}/groupvars/app.yml'
+      }
+    }
     stage('Deploy') {
       steps {
           echo "Running deployment script...."
           sh 'chmod 777 ${WORKSPACE}/BouwDataWebApp/scripts/deployment.sh'
           sh '${WORKSPACE}/BouwDataWebApp/scripts/deployment.sh'
           cleanWs()
-      }
-    }
-    stage('deploy production via ansible'){
-      steps{
-        ansiblePlaybook installation: 'Ansible', inventory: '${WORKSPACE}/hosts', playbook: '${WORKSPACE}/groupvars/app.yml'
       }
     }
   }

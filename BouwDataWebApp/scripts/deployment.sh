@@ -75,7 +75,7 @@ then
 
   echo "-------------------------------------"
   echo "FireBase deploy using token"
-  sudo firebase deploy --project bouwdatadb --only hosting --token "1//099fqs9pJtr5PCgYIARAAGAkSNwF-L9IrEnxnZqa3mslR7QHPeifMVNAHPlQHtnAzqOGtPRhPYZIP2JLDUDnzUuKujLbZ0TKJvUo"
+  firebase deploy --project bouwdatadb --only hosting --token "1//099fqs9pJtr5PCgYIARAAGAkSNwF-L9IrEnxnZqa3mslR7QHPeifMVNAHPlQHtnAzqOGtPRhPYZIP2JLDUDnzUuKujLbZ0TKJvUo"
   echo "-------------------------------------"
 
 else
