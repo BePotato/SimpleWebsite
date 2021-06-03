@@ -3,7 +3,6 @@
 ---
 - hosts: simplewebsite
   user: root
-  connection: local
   gather_facts: yes
   become: yes
 
