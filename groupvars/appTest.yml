@@ -50,11 +50,11 @@
       state: latest
 
   - name: stop docker 
-    command: docker stop production
+    command: docker stop test
     ignore_errors: yes
 
   - name: remove docker
-    command: docker rm production
+    command: docker rm test
     ignore_errors: yes
   
   - name: build image
