@@ -11,7 +11,7 @@
     - appDir : simplewebsite
     - repo: SimpleWebsite
     - account: root
-    - privateKey: /root/.ssh/id_rsa
+    - privateKey: /home/max/.ssh/id_rsa
     - NODEJS_VERSION: "8"
     - ansible_distribution_release: "xenial" #trusty
     - var_node: /home
@@ -28,7 +28,7 @@
     file: path={{homeDir}}/{{appDir}} state=directory
 
   - name: Copy Private Key
-    copy: src=/home/max/.ssh/id_rsa dest={{homeDir}} mode=0600
+    copy: src={{privateKey}} dest={{homeDir}} mode=0600
   
   - name: install git
     yum: 
