@@ -41,7 +41,7 @@ pipeline {
 
     stage('deploy production via ansible'){
       steps{
-        ansiblePlaybook installation: 'Ansible', inventory: '${WORKSPACE}/hosts', playbook: '${WORKSPACE}/groupvars/app.yml'
+        ansiblePlaybook installation: 'Ansible', playbook: '${WORKSPACE}/groupvars/app.yml'
       }
     }
     stage('Deploy') {
