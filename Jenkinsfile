@@ -39,9 +39,14 @@ pipeline {
       //}
     }
 
+    stage('deploy test via ansible'){
+      steps{
+        ansiblePlaybook installation: 'Ansible', playbook: '${WORKSPACE}/groupvars/appTest.yml'
+      }
+    }
     stage('deploy production via ansible'){
       steps{
-        ansiblePlaybook installation: 'Ansible', playbook: '${WORKSPACE}/groupvars/app.yml'
+        ansiblePlaybook installation: 'Ansible', playbook: '${WORKSPACE}/groupvars/appProduction.yml'
       }
     }
     //stage('Deploy') {
