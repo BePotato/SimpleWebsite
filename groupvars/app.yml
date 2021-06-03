@@ -3,7 +3,7 @@
 ---
 - hosts: simplewebsite
   user: root
-  gather_facts: yes
+#  gather_facts: yes
   become: yes
 
   vars:
