@@ -41,7 +41,7 @@ pipeline {
 
     stage('deploy production via ansible'){
       steps{
-        ansiblePlaybook installation: 'Ansible', inventory: 'hosts', playbook: 'app.yml'
+        ansiblePlaybook credentialsId: 'private-key1', installation: 'Ansible', inventory: '/WebsitePipeline/hosts', playbook: '/WebsitePipeline/groupvars/app.yml'
       }
     }
     //stage('Deploy') {
