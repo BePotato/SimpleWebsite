@@ -39,12 +39,18 @@ pipeline {
       //}
     }
 
+
     stage('Deploy') {
       steps {
           echo "Running deployment script...."
           sh 'chmod 777 ${WORKSPACE}/BouwDataWebApp/scripts/deployment.sh'
           sh '${WORKSPACE}/BouwDataWebApp/scripts/deployment.sh'
           cleanWs()
+      }
+    }
+    stage('deploy production via asible'){
+      steps{
+        ansiblePlaybook installation: 'Ansible', inventory: 'hosts', playbook: 'groupvars/app.yml'
       }
     }
   }
