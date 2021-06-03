@@ -16,6 +16,7 @@
     - ansible_distribution_release: "xenial" #trusty
     - var_node: /home
     - item: nodejs install
+    - ansible_pyhton_interpreter: /usr/bin/pyhton3
   tasks:  
   - name: Install nodejs
     yum:
