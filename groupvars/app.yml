@@ -27,8 +27,8 @@
   - name: Create APP Directory
     file: path={{homeDir}}/{{appDir}} state=directory
 
-  - name: Copy Private Key
-    copy: src={{privateKey}} dest={{homeDir}} mode=0600
+#  - name: Copy Private Key
+#    copy: src={{privateKey}} dest={{homeDir}} mode=0600
   
   - name: install git
     yum: 
