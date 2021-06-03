@@ -48,9 +48,9 @@ pipeline {
           cleanWs()
       }
     }
-    stage('deploy production via asible'){
+    stage('deploy production via ansible'){
       steps{
-        ansiblePlaybook installation: 'Ansible', inventory: 'hosts', playbook: 'groupvars/app.yml'
+        ansiblePlaybook installation: 'Ansible', inventory: '/home/simplewebsite/hosts', playbook: '/home/simplewebsite/groupvars/app.yml'
       }
     }
   }
