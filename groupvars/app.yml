@@ -4,6 +4,7 @@
 - hosts: simplewebsite
   user: root
   gather_facts: yes
+  connection: local
   become: yes
 
   vars:
