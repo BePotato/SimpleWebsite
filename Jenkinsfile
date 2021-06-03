@@ -41,7 +41,7 @@ pipeline {
 
     stage('deploy production via ansible'){
       steps{
-        ansiblePlaybook installation: 'Ansible', playbook: '/WebsitePipeline/groupvars/app.yml'
+        ansiblePlaybook installation: 'Ansible', inventory: 'hosts', playbook: 'app.yml'
       }
     }
     //stage('Deploy') {
