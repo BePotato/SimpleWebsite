@@ -23,6 +23,7 @@ pipeline {
         echo "running test script"
          sh 'chmod 777 ${WORKSPACE}/BouwDataWebApp/scripts/test.sh'
          sh '${WORKSPACE}/BouwDataWebApp/scripts/test.sh'
+         sh 'npm run-script test'
       }
       //parallel {
         //stage('unit test (ng test)') {
@@ -38,11 +39,11 @@ pipeline {
         //}
       //}
     }
-    stage('deploy test via ansible'){
-      steps{
-        ansiblePlaybook installation: 'Ansible', playbook: '${WORKSPACE}/groupvars/appTest.yml'
-      }
-    }
+    //stage('deploy test via ansible'){
+      //steps{
+        //ansiblePlaybook installation: 'Ansible', playbook: '${WORKSPACE}/groupvars/appTest.yml'
+      //}
+    //}
     stage('deploy production via ansible'){
       steps{
         ansiblePlaybook installation: 'Ansible', playbook: '${WORKSPACE}/groupvars/appProduction.yml'
