@@ -7,4 +7,4 @@ RUN npm run test
 
 FROM nginx:1.17.1-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /home/simplewebsite/BouwDataWebApp/dist/BouwDataWebApp/TestDocker /usr/share/nginx/html
+COPY --from=build /home/simplewebsite/BouwDataWebApp/dist/BouwDataWebApp /usr/share/nginx/html
