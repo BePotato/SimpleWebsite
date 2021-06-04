@@ -1,5 +1,5 @@
 FROM node:12.7-alpine AS build
-WORKDIR /home/simplewebsite/BouwDataWebApp
+WORKDIR /home/simplewebsite/BouwDataWebApp/TestDocker
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
