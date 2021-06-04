@@ -1,5 +1,5 @@
 FROM node:12.7-alpine AS build
-RUN apt-get update && apt-get install -y --no-install-recommends chromium
+RUN npm update && npm install -y --no-install-recommends chromium
 ENV CHROME_BIN=chromium
 WORKDIR /home/simplewebsite/BouwDataWebApp
 COPY package.json package-lock.json ./
