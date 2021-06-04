@@ -61,4 +61,4 @@
     command: chdir={{homeDir}}/{{appDir}}/BouwDataWebApp/TestDocker docker build -t av-app-multistage-image-test .
 
   - name: docker run 
-    command: chdir={{homeDir}}/{{appDir}}/BouwDataWebApp/TestDocker docker run --name test -d -p 8082:80 av-app-multistage-image-test
+    command: chdir={{homeDir}}/{{appDir}}/BouwDataWebApp/TestDocker docker run --name test -d -p 8083:80 av-app-multistage-image-test
