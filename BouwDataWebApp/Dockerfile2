@@ -3,7 +3,7 @@ WORKDIR /home/simplewebsite/BouwDataWebApp
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-RUN npm run test
+RUN npm test
 
 FROM nginx:1.17.1-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
