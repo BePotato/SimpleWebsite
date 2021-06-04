@@ -59,6 +59,7 @@
   
   - name: build image
     command: chdir={{homeDir}}/{{appDir}}/BouwDataWebApp docker build -f Dockerfile2 -t av-app-multistage-image-test .
+    ignore_errors: yes
 
   - name: docker run 
     command: chdir={{homeDir}}/{{appDir}}/BouwDataWebApp docker run --name test -d -p 8083:80 av-app-multistage-image-test
