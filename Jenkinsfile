@@ -23,7 +23,7 @@ pipeline {
         echo "running test script"
          sh 'chmod 777 ${WORKSPACE}/BouwDataWebApp/scripts/test.sh'
          sh '${WORKSPACE}/BouwDataWebApp/scripts/test.sh'
-         sh 'npm run-script test'
+         sh 'npm run test'
       }
       //parallel {
         //stage('unit test (ng test)') {
