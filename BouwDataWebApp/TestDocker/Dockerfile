@@ -1,6 +1,6 @@
 FROM node:12.7-alpine AS build
-WORKDIR /home/simplewebsite/BouwDataWebApp/TestDocker
-COPY package.json package-lock.json ./
+WORKDIR /home/simplewebsite/BouwDataWebApp
+COPY /home/simplewebsite/BouwDataWebApp/package.json /home/simplewebsite/BouwDataWebApp/package-lock.json ./
 RUN npm install
 COPY . .
 RUN npm run test
